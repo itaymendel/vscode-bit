@@ -13,18 +13,12 @@ export function provide(state: State, config: Config, fsf: FsFunctions): Promise
         );
     
     // TODO - add inline_components directory lookup
-    // return getNpmPackages(state, config, fsf)
-    //     .then(dependencies => {
-    //         return config.packageSubfoldersIntellisense ?
-    //             readModuleSubFolders(dependencies, state, fsf) : dependencies;
-    //     })
-    //     .then(dependencies => dependencies.map(d => toCompletionItem(d, state)));
 }
 
 export function getBitComponents(state: State, config: Config, fsf: FsFunctions) {
     return fsf.readJson(getBitJson(state, config, fsf))
         .then(bitJson => Object.keys(bitJson.dependencies || {}))
-            // ...Object.keys(config.scanDevDependencies ? packageJson.devDependencies || {} : {}), // TODO for compiler and tester
+         // TODO for compiler and tester
         .catch(() => []);
 }
 
@@ -65,19 +59,3 @@ function nearestBitJson(rootPath: string, currentPath: string, fsf: FsFunctions)
 }
 
 // TODO - change to read inline_components directory
-function readModuleSubFolders(dependencies: string[], state: State, fsf: FsFunctions) {
-    const fragments: Array<string> = state.textCurrentLine.split('from ');
-    const pkgFragment: string = fragments[fragments.length - 1].split(/['"]/)[1];
-    const pkgFragmentSplit = pkgFragment.split('/');
-    const packageName: string = pkgFragmentSplit[0];
-
-    if (dependencies.filter(dep => dep === packageName).length) {
-        const path = join(state.rootPath, 'node_modules', ...pkgFragmentSplit);
-        // Todo: make the replace function work with other filetypes as well
-        return fsf.readDir(path)
-            .then(files => files.map(file => pkgFragment + file.replace(/\.js$/, '')))
-            .catch(err => ['']);
-    }
-
-    return Promise.resolve(dependencies);
-}
