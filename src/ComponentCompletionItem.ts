@@ -4,7 +4,7 @@ import { State } from './State';
 export class ComponentCompletionItem extends CompletionItem {  
   constructor(label: string, state: State) {
     super(label);
-    this.kind = CompletionItemKind.Module;
+    this.kind = CompletionItemKind.File;
     this.textEdit = TextEdit.replace(this.importStringRange(state), label);
   }
 
