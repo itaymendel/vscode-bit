@@ -2,7 +2,7 @@
     "name": "bit-intellisense",
     "displayName": "bit-intellisense",
     "description": "Visual Studio Code plugin that autocompletes bit components",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "ranyitzhaki",
     "engines": {
         "vscode": "^1.5.0"
@@ -10,12 +10,12 @@
     "categories": [
         "Other"
     ],
-        "activationEvents": [
-         "onLanguage:typescript",
-         "onLanguage:javascript",
-         "onLanguage:javascriptreact",
-         "onLanguage:typescriptreact",
-         "onCommand:bit-intellisense.import"
+    "activationEvents": [
+        "onLanguage:typescript",
+        "onLanguage:javascript",
+        "onLanguage:javascriptreact",
+        "onLanguage:typescriptreact",
+        "onCommand:bit-intellisense.import"
     ],
     "main": "./out/src/extension",
     "contributes": {
