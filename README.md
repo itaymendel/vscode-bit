@@ -18,6 +18,7 @@ you have to have bit installed and use bit-js (put dependencies on bit.json file
 - bit.json properties tooltips and hints.
 - jump to component definition.
 - bit create command from a mark function in the editor.
-- command for automatic dependencies in bit.json
+- command for automatic dependencies in bit.json.
+- autocompletions for properties in bit.json file.
 
 **Enjoy!**
