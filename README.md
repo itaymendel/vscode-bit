@@ -4,7 +4,9 @@ intellisense for bit
 
 ## Features
 
-completions after bit('[completion here]')
+- completions after bit('[completion here]').
+
+- autocompletions for properties in bit.json file.
 
 ## Requirements
 
@@ -19,6 +21,5 @@ you have to have bit installed and use bit-js (put dependencies on bit.json file
 - jump to component definition.
 - bit create command from a mark function in the editor.
 - command for automatic dependencies in bit.json.
-- autocompletions for properties in bit.json file.
 
 **Enjoy!**

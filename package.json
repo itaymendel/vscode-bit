@@ -19,6 +19,10 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
+        "jsonValidation": [{
+            "fileMatch": "bit.json",
+            "url": "./schema.json"
+        }],
         "commands": [
             {
                 "command": "bit-intellisense.import",

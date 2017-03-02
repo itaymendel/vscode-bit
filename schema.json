@@ -1,0 +1,39 @@
+{
+  "title": "JSON schema for bit.json configuration files",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "name"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "dependency": {
+      "description": "Dependencies are specified with a simple hash of package name to version range. The version number is a string.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "dependencies": {
+      "$ref": "#/dependency"
+    },
+    "envs": {
+      "type": "object",
+      "impl": {
+        "type": "string"
+      },
+      "spec": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "object",
+      "compiler": {
+        "type": "string"
+      },
+      "tester": {
+        "type": "string"
+      }
+    }
+  }
+}

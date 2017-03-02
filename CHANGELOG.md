@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [unreleased]
 
+## [0.0.3]
+
+- add basic schema for bit.json file
+
 ## [0.0.2]
 
 - change the icon to a file icon
