@@ -2,7 +2,7 @@
     "name": "bit-intellisense",
     "displayName": "bit-intellisense",
     "description": "Visual Studio Code plugin that autocompletes bit components",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "ranyitzhaki",
     "engines": {
         "vscode": "^1.5.0"
@@ -19,10 +19,12 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "jsonValidation": [{
-            "fileMatch": "bit.json",
-            "url": "./schema.json"
-        }],
+        "jsonValidation": [
+            {
+                "fileMatch": "bit.json",
+                "url": "./schema.json"
+            }
+        ],
         "commands": [
             {
                 "command": "bit-intellisense.import",
