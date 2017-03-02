@@ -4,7 +4,9 @@ All notable changes to the "bit-intellisense" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [unreleased]
+## [0.0.4]
+
+- add autocompletions from the inline_components
 
 ## [0.0.3]
 

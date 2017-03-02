@@ -1,48 +1,51 @@
 {
-    "name": "bit-intellisense",
-    "displayName": "bit-intellisense",
-    "description": "Visual Studio Code plugin that autocompletes bit components",
-    "version": "0.0.3",
-    "publisher": "ranyitzhaki",
-    "engines": {
-        "vscode": "^1.5.0"
-    },
-    "categories": [
-        "Other"
+  "name": "bit-intellisense",
+  "displayName": "bit-intellisense",
+  "description": "Visual Studio Code plugin that autocompletes bit components",
+  "version": "0.0.3",
+  "publisher": "ranyitzhaki",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact",
+    "onCommand:bit-intellisense.import"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "jsonValidation": [
+      {
+        "fileMatch": "bit.json",
+        "url": "./schema.json"
+      }
     ],
-    "activationEvents": [
-        "onLanguage:typescript",
-        "onLanguage:javascript",
-        "onLanguage:javascriptreact",
-        "onLanguage:typescriptreact",
-        "onCommand:bit-intellisense.import"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "jsonValidation": [
-            {
-                "fileMatch": "bit.json",
-                "url": "./schema.json"
-            }
-        ],
-        "commands": [
-            {
-                "command": "bit-intellisense.import",
-                "title": "Bit Intellisense: Import module"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.0.3",
-        "vscode": "^1.0.0",
-        "mocha": "^2.3.3",
-        "@types/node": "^6.0.40",
-        "@types/mocha": "^2.2.32"
-    }
+    "commands": [
+      {
+        "command": "bit-intellisense.import",
+        "title": "Bit Intellisense: Import module"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  },
+  "dependencies": {
+    "glob": "^7.1.1"
+  }
 }

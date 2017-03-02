@@ -8,13 +8,14 @@ intellisense for bit
 
 - autocompletions for properties in bit.json file.
 
+- completions from the inline components directory.
+
 ## Requirements
 
 you have to have bit installed and use bit-js (put dependencies on bit.json file)
 
 ## what's next ?
 
-- completions from the inline components directory.
 - completions for dependencies in bit.json files.
 - completions for compiler && testers.
 - bit.json properties tooltips and hints.
