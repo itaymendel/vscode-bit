@@ -1,4 +1,4 @@
-export function uniq_fast(a: Array<String>): Array<String> {
+export function uniq_fast(a) {
     var seen = {};
     var out = [];
     var len = a.length;

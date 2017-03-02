@@ -28,7 +28,6 @@ export function getBitComponents(state: State, config: Config, fsf: FsFunctions)
         return new Promise((resolve, reject) => {
             return glob('*/*', { cwd: getInlineComponents(state) }, (err, files) => {
                 if (err) return reject(err);
-                console.log(files);
                 return resolve(files.map(removeBoxIfNeeded));
             });
         });
