@@ -1,26 +1,26 @@
 # bit-intellisense
 
-intellisense for bit
+Intellisense for [Bit](https://github.com/teambit/bit)
 
 ## Features
 
-- completions after bit('[completion here]').
+- Completions after bit('[completion here]').
 
-- autocompletions for properties in bit.json file.
+- Autocompletions for properties in bit.json file.
 
-- completions from the inline components directory.
+- Completions from the inline components directory.
 
 ## Requirements
 
-you have to have bit installed and use bit-js (put dependencies on bit.json file)
+You have to have bit installed and use [bit-js](https://github.com/teambit/bit-js) (put dependencies on bit.json file)
 
 ## what's next ?
 
-- completions for dependencies in bit.json files.
-- completions for compiler && testers.
+- Completions for dependencies in bit.json files.
+- Completions for compiler && testers.
 - bit.json properties tooltips and hints.
-- jump to component definition.
-- bit create command from a mark function in the editor.
-- command for automatic dependencies in bit.json.
+- Jump to component definition.
+- Bit create command from a mark function in the editor.
+- Command for automatic dependencies in bit.json.
 
 **Enjoy!**
