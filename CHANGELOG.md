@@ -6,15 +6,15 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [0.0.4]
 
-- add autocompletions from the inline_components
+- Add autocompletions from the inline_components
 
 ## [0.0.3]
 
-- add basic schema for bit.json file
+- Add basic schema for bit.json file
 
 ## [0.0.2]
 
-- change the icon to a file icon
+- Change the icon to a file icon
 
 ## [0.0.1]
 
