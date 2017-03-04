@@ -12,8 +12,6 @@ export function provide(state: State, config: Config, fsf: FsFunctions): Promise
     return getBitComponents(state, config, fsf)
         .then(dependencies => dependencies.map(d => toCompletionItem(d, state))
         );
-    
-    // TODO - add inline_components directory lookup
 }
 
 export function getBitComponents(state: State, config: Config, fsf: FsFunctions) {

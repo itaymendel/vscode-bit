@@ -17,7 +17,7 @@
     "dependencies": {
       "$ref": "#/dependency"
     },
-    "envs": {
+    "env": {
       "type": "object",
       "impl": {
         "type": "string"
