@@ -4,6 +4,13 @@ All notable changes to the "bit-intellisense" extension will be documented in th
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [unreleased]
+
+## [0.0.5]
+
+- fix json schema ( + packageDependencies, + dependencies)
+- Add autocompletions for bit.json components (without version completions)
+
 ## [0.0.4]
 
 - Add autocompletions from the inline_components

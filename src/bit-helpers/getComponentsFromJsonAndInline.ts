@@ -1,20 +1,14 @@
 import * as glob from 'glob';
-import { State } from './State';
-import { Config } from './config';
-import { fsf, FsFunctions } from './fs-functions';
+import { State } from '../State';
+import { Config } from '../config';
+import { fsf, FsFunctions } from '../fs-functions';
 import { join, resolve } from 'path';
 import { CompletionItem } from 'vscode';
-import { ComponentCompletionItem } from './ComponentCompletionItem';
+import { ComponentCompletionItem } from '../ComponentCompletionItem';
 import * as repl from 'repl';
-import { uniq_fast } from './utils';
+import { uniq_fast } from '../utils';
 
-export function provide(state: State, config: Config, fsf: FsFunctions): Promise<CompletionItem[]> {
-    return getBitComponents(state, config, fsf)
-        .then(dependencies => dependencies.map(d => toCompletionItem(d, state))
-        );
-}
-
-export function getBitComponents(state: State, config: Config, fsf: FsFunctions) {
+export default function getComponentsFromJsonAndInline(state: State, config: Config, fsf: FsFunctions) {
     function getFromBitJson() {
         return fsf.readJson(getBitJson(state, config, fsf))
         .then(bitJson => Object.keys(bitJson.dependencies || {}).map(getBitLocalIdFromBitJson))
@@ -36,25 +30,6 @@ export function getBitComponents(state: State, config: Config, fsf: FsFunctions)
             return uniq_fast(bitJsonDependencies.concat(inlineDependencies));
         })
     })
-}
-
-function removeBoxIfNeeded(localId) {
-    if (localId.split('/')[0] === 'global') {
-        return localId.slice(localId.indexOf('/') + 1);
-    }
-    return localId;
-}
-
-function getBitLocalIdFromBitJson(str: string): string {
-    return removeBoxIfNeeded(str.slice(str.indexOf('/') + 1));
-}
-
-function getBuildInModules() : string[] {
-    return (<any>repl)._builtinLibs;
-}
-
-function toCompletionItem(dependency: string, state: State) {
-    return new ComponentCompletionItem(dependency, state);
 }
 
 function getInlineComponents(state: State) {
@@ -89,4 +64,13 @@ function nearestBitJson(rootPath: string, currentPath: string, fsf: FsFunctions)
     return nearestBitJson(rootPath, resolve(currentPath, '..'), fsf);
 }
 
-// TODO - change to read inline_components directory
+function removeBoxIfNeeded(localId) {
+    if (localId.split('/')[0] === 'global') {
+        return localId.slice(localId.indexOf('/') + 1);
+    }
+    return localId;
+}
+
+function getBitLocalIdFromBitJson(str: string): string {
+    return removeBoxIfNeeded(str.slice(str.indexOf('/') + 1));
+}

@@ -1,6 +1,6 @@
-import { State } from './State';
+import { State } from '../State';
 
-export function shouldProvide(state: State) {
+export default function shouldProvideToJs(state: State) {
     return isBitLoadFunc(state.textCurrentLine, state.cursorPosition)
         && !startsWithADot(state.textCurrentLine, state.cursorPosition);
 }

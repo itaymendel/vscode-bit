@@ -1,11 +1,14 @@
 import { CompletionItem, CompletionItemKind, TextDocument, TextEdit, Position, Range } from 'vscode';
 import { State } from './State';
 
-export class ComponentCompletionItem extends CompletionItem {  
-  constructor(label: string, state: State) {
+export class ComponentCompletionItem extends CompletionItem {
+  range: Range;
+  
+  constructor(label: string, state: State, kind: CompletionItemKind) {
     super(label);
-    this.kind = CompletionItemKind.File;
-    this.textEdit = TextEdit.replace(this.importStringRange(state), label);
+    this.kind = kind;
+    this.insertText = label;
+    this.range = this.importStringRange(state);
   }
 
   importStringRange({ textCurrentLine, cursorLine, cursorPosition }) : Range {
@@ -13,4 +16,8 @@ export class ComponentCompletionItem extends CompletionItem {
     const quotationPosition = Math.max(textToPosition.lastIndexOf('\"'), textToPosition.lastIndexOf('\''));
     return new Range(cursorLine, quotationPosition + 1, cursorLine, cursorPosition)
   }
+}
+
+export function toCompletionItem(dependency: string, state: State, kind: CompletionItemKind) {
+    return new ComponentCompletionItem(dependency, state, kind);
 }
