@@ -22,7 +22,7 @@ function getComponents(state: State) {
 }
 
 function transformToDependencyObject(path) {
-  const [ name, box, scope, version ] = path.split(sep);
+  const [ box, name, scope, version ] = path.split(sep);
   
   return `${scope}/${box}/${name}`;
 }

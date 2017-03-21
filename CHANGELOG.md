@@ -6,7 +6,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [unreleased]
 
-## [0.0.5]
+## [0.0.7]
+
+- fix bug with json completions order
+
+## [0.0.6]
 
 - fix json schema ( + packageDependencies, + dependencies)
 - Add autocompletions for bit.json components (without version completions)
