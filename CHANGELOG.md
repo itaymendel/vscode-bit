@@ -6,6 +6,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [unreleased]
 
+## [0.0.8]
+
 - add misc array to the json scheme + add descriptions
 
 ## [0.0.7]
