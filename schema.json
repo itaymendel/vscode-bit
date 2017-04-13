@@ -2,7 +2,6 @@
   "title": "JSON schema for bit.json configuration files",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "required": [],
   "additionalProperties": false,
   "properties": {
     "dependencies": {
@@ -19,22 +18,38 @@
         "type": "string"
       }
     },
-    "env": {
+    "sources": {
       "type": "object",
-      "impl": {
+      "description": "sources added to the bit component",
+      "properties": {
+        "impl": {
+        "description": "implementation file name",
         "type": "string"
       },
       "spec": {
-        "type": "string"
-      }
-    },
-    "sources": {
-      "type": "object",
-      "compiler": {
+        "description": "spec file name - for writing unit tests",
         "type": "string"
       },
-      "tester": {
-        "type": "string"
+      "misc": {
+        "description": "other resources which can be added to a component",
+        "type": "array",
+        "items": { "type": "string" },
+        "uniqueItems": true
+      }
+      }
+    },
+    "env": {
+      "type": "object",
+      "description": "bit environment components",
+      "properties": {
+        "compiler": {
+          "description": "a compiler component id",
+          "type": "string"
+        },
+        "tester": {
+          "description": "a tester component id",
+          "type": "string"
+        } 
       }
     }
   }

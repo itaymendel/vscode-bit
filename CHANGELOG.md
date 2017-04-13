@@ -6,6 +6,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [unreleased]
 
+- add misc array to the json scheme + add descriptions
+
 ## [0.0.7]
 
 - fix bug with json completions order
